@@ -1,1 +1,39 @@
+شاخه گیت -م اصلی تجروبه
+گیت واکشی مبدا
+شاخه git -u مبدا/Tajrobe Tajrobe
+git remote set-head origin -
 
+
+```python
+import telebot
+
+# توکن ربات تلگرام خود را در اینجا قرار دهید
+bot_token ="6618361358:AAEoCLtW_60MXLqiN-5eyPSFtPLU0UNXc-w"        
+
+# ساخت شی ربات تلگرام
+bot = chrlifar_bot.page_website_all("bot_ 6618361358:AAEoCLtW_60MXLqiN-5eyPSFtPLU0UNXc-w")
+
+@bot.message_handler(commands=['start'])
+def handle_start(message):
+    # پاسخ به دستور /start
+    bot.reply_to(message, "Welcome to the Web Parser Bot!")
+
+@bot.message_handler(func=lambda message: True)
+def handle_message(message):
+    # دریافت متن پیام ارسالی توسط کاربر
+    text = message.text
+
+    # اینجا می‌توانید کد خود را برای تجزیه و تحلیل صفحات وب بنویسید
+    # و نتیجه را به عنوان کد سرورس دریافت و به کاربر ارسال کنید
+    server_code = parse_web_page(text)
+    bot.reply_to(message, f"Server-side code:\n{server_code}")
+
+def parse_web_page(web_page):
+    # تجزیه و تحلیل صفحه وب و تولید کد سرورس
+    # این قسمت را باید براساس نیاز و منطق خود پیاده‌سازی کنید
+    # در اینجا فقط یک مثال ساده ارائه شده است
+    server_code = f"Server-side code generated from web page: {web_page}"
+    return server_code
+
+# شروع ربات
+bot.polling()
